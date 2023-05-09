@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trade Ticket</title>
+    <link href="https://fonts.googleapis.com/css2?family=poppins:wght@300;400;500;600&display=swap"
+    rel="stylesheet">
+    <style>
+        *{
+            padding:0;
+            margin:0;
+            box-sizing: border-box;
+            outline: none;
+        }
+        body{
+            font-family: 'poppins', sans-serif;
+        }
+        .wrapper{
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            padding: 70px 0;
+            max-width: 400px;
+            margin: 0 auto;
+        }
+        .menu,
+        .content{
+            width: 100%
+        }
+        select{
+            width: 100%
+            padding: 15px;
+            font-size: 16px;
+            font-weight: 700;
+            font-family: 'poppins', sans-serif;
+            border: none;
+            border-radius: 8px;
+            border: 2px solid #3f51b5;
+            box-shadow: 0 15px 15px #efefef;
+            appearance; none;
+            background: #e8eaf6 url(images/arrow.png) no-repeat;
+            background-position: 95% 55%;
+            background-size: 22px;
+        }
+
+        .content{
+            margin: 30px 0;
+        }
+        .content .data{
+            padding: 25px;
+            background-color: #fff;
+            border: 2px solid #8bc34a;
+            border-radius: 8px;
+        }
+        .content p{
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid gainsboro;
+        }
+        .content p:last-child{
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .content p b{
+            font-weight: 700;
+        }
+        .content p span{
+            float: right;
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+<div class="wrapper">
+    <div class="menu">
+        <select id="name">
+            <option value="Stocks">Stocks/ETFs</option>
+            <option value="Liz">Liz Borto</option>
+            <option value="Mike">Mike Pelta</option>
+        </select>
+    </div>  
+
+<div class="content">
+    <div id="Stocks" class ="data">
+        <p><b>Symbol</b><span>Enter Symbol</span></p>
+        <p><b>Action</b><span><select id="action">
+                                    <option value="">select</option>    
+                                    <option value="1">buy</option>
+                                    <option value="2">sell</option>
+                                    <option value="3">sell short</option>
+                                </select></span></p>
+        <p><b>Order Type</b><span><select id="order type">
+                                    <option value="4">select</option>
+                                    <option value="5">Market</option>
+                                    <option value="6">Limit</option>
+                                    <option value="7">stop</option>
+                                    <option value="8">stop limit</option>
+                                </select></span></p>    
+        <p><b>Time in Force</b><span><select id="Time in Force">
+                                    <option value="9">Day</option>
+                                    <option value="10">GTC</option>
+                                    <option value="11">Fill or Kill</option>
+                                    <option value="12">Immediate or Cancel</option>                            
+        </select></span></p>  
+
+    </div>
+    <div id="Liz" class ="data">
+        <p><b>Full Name</b><span>Liz Borto</span></p>
+        <p><b>Email</b><span>Liz@google.com</span></p>
+        <p><b>Phone</b><span>645089484</span></p>
+        <p><b>Twitter</b><span>lookatthis</span></p>
+        <p><b>Address</b><span>129 corn street</span></p>
+    </div>
+    <div id="Mike" class ="data">
+        <p><b>Full Name</b><span>Mike Pelta</span></p>
+        <p><b>Email</b><span>Mike@google.com</span></p>
+        <p><b>Phone</b><span>645089484</span></p>
+        <p><b>Twitter</b><span>lookatthis</span></p>
+        <p><b>Address</b><span>129 corn street</span></p>
+    </div>
+</div>  
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+
+    $(document).ready(function(){
+        $("#name").on('change', function(){
+            $(".data").hide();
+            $("#" + $(this).val()).fadeIn(700);
+        }).change();
+    });
+
+</script>
+</body>
+</html>
